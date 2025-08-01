@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Code Challenge 4 – Travel Article App
 
-## Getting Started
+This is a travel article web application built as part of a frontend technical test. Users can **create**, **read**, **update**, and **delete** travel articles. The app includes features like infinite scroll, filtering by title and category, and responsive UI.
 
-First, run the development server:
+## ✨ Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 [Deployed on Vercel](https://code-challange-4.vercel.app/)
+
+## 📁 Repository
+
+🔗 [GitHub Repo (Public)](https://github.com/TrivenaPanjaitan/Code-Challange-4)
+
+---
+
+## 🧰 Tech Stack
+
+- **Next.js 14+** with App Router
+- **TypeScript**
+- **Tailwind CSS** for styling
+- **Zustand** for state management
+- **Zod** & **React Hook Form** for form validation
+- **Axios** for API calls
+- **Strapi-style REST API**
+- **Vercel** for deployment
+
+---
+
+## 📦 Project Structure
+
+```
+.
+├── app/                  # App Router Pages
+│   ├── page.tsx         # Homepage with article list & filter
+│   ├── create/page.tsx  # Create article page
+│   ├── edit/[id]/       # Edit article page
+│   └── detail/[id]/     # Detail view page
+├── components/          # Shared UI components
+│   ├── ArticleCard.tsx
+│   ├── LogoutButton.tsx
+│   ├── modals/          # Success & Error Modals
+│   └── skeleton/        # Loading skeletons
+├── lib/                 # API services
+│   └── article.ts
+├── store/               # Zustand stores
+│   └── articleStore.ts
+│   └── categoryStore.ts
+├── types/               # Type definitions
+├── public/icons/        # Static icons
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Installation & Running Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clone the repository
 
-## Learn More
+```bash
+git clone https://github.com/TrivenaPanjaitan/Code-Challange-4.git
+cd Code-Challange-4
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Install dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+yarn install
+# or
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Set environment variable
 
-## Deploy on Vercel
+Create a `.env.local` file:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+NEXT_PUBLIC_API_URL=https://extra-brooke-yeremiadio-46b2183e.koyeb.app/api
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> 🔐 Make sure the API endpoint is publicly accessible.
+
+### 4. Run the development server
+
+```bash
+yarn dev
+# or
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to see the app.
+
+---
+
+## 🧪 Features Implemented
+
+- ✅ Infinite scroll with Intersection Observer
+- ✅ Filter by title and category
+- ✅ Loading skeletons for better UX
+- ✅ Error and success modal feedback
+- ✅ Protected route check (simple localStorage token)
+- ✅ CRUD operations for articles
+- ✅ Responsive UI with dark mode support
+
+---
+
+## 📝 Notes
+
+- Authentication token is stored in `localStorage`.
+- Basic session check is performed on initial load (logout on 401).
+- Modal actions are customizable with optional `onClose`/`onOk` handlers.
+
+---
+
+## 🧑 Author
+
+**Trivena Panjaitan**  
+Frontend Developer  
+✉️ [LinkedIn](https://www.linkedin.com/in/trivenapanjaitan/) *(optional)*
+
+---
+
+## 📄 License
+
+This project is for technical test purposes only and not intended for production use.
